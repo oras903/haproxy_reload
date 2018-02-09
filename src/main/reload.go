@@ -30,6 +30,7 @@ type ipaddress struct {
 
 
 func main() {
+      //从元数据配置中读取consul管理地址
       client := sse.NewClient("http://192.168.20.11:8088/v2/events?event_type=status_update_event")
 
     client.Subscribe("status_update_event", func(msg *sse.Event) {
